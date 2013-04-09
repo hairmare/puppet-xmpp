@@ -1,0 +1,15 @@
+---
+:xmpp_jid: <%= @xmpp_jid %>
+:xmpp_password: <%= @xmpp_password %>
+:xmpp_target: <%= @xmpp_target %>
+:xmpp_muc: <%= @xmpp_muc %>
+<%- if @xmpp_environment.is_a?(Array) %>
+:xmpp_environment:<%- @xmpp_environment.each do |env| %>
+  - <%= env %>
+<%- end %>
+<%- else %>
+:xmpp_environment: <%= @xmpp_environment %>
+<%- end %>
+<%- if @xmpp_server %>
+:xmpp_server: <%= @xmpp_server %>
+<%- end %>
